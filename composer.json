@@ -1,10 +1,11 @@
 {
     "name": "aslan/todo",
     "description": "бот на телеграм с Laravel и Heroku / telegram bot with laravel and heroku",
+    "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Aslan\\Todo\\": "src/"
+            "App\\": "src"
         }
     },
     "authors": [
