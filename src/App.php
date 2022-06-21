@@ -17,15 +17,11 @@ class App
 
     public function index(array $message, string $chatId): void
     {
-        error_log(json_encode($message));
+        $tasksArr =  $this->transport->getToDoList();
 
-        $tasks[] = new TaskDTO('TODO1', TaskDTO::STATUS_TODO);
-        $tasks[] = new TaskDTO('TODO2', TaskDTO::STATUS_TODO);
-        $tasks[] = new TaskDTO('TODO3', TaskDTO::STATUS_TODO);
-        $tasks[] = new TaskDTO('TODO4', TaskDTO::STATUS_DONE);
-        $tasks[] = new TaskDTO('TODO5', TaskDTO::STATUS_DONE);
-        $tasks[] = new TaskDTO('TODO6', TaskDTO::STATUS_DONE);
-
+        $tasks = array_map(function ($item) {
+            return new TaskDTO($item['description'], $item['status']);
+        },$tasksArr['tasks']);
         $this->sendToDoList($tasks, $chatId);
     }
     /**
