@@ -16,9 +16,9 @@ function sendAnswer($method, $data, $headers = [])
         CURLOPT_POST => 1,
         CURLOPT_HEADER => 0,
         CURLOPT_RETURNTRANSFER => 1,
-        CURLOPT_URL => 'https://api.telegram.org/bot5308802884:AAHN1BguDHt_LB06OLsU0e8hav88dmIj1kY/setWebhook?url=https://whispering-thicket-18186.herokuapp.com/',
+        CURLOPT_URL => 'https://api.telegram.org/bot5308802884:AAHN1BguDHt_LB06OLsU0e8hav88dmIj1kY/setWebhook?url=https://whispering-thicket-18186.herokuapp.com/' . $method,
         CURLOPT_POSTFIELDS => json_encode($data),
-        CURLOPT_HTTPHEADER => array_merge(['Content-type: application/json'],$headers)
+        CURLOPT_HTTPHEADER => array_merge(['Content-type: application/json'], $headers)
     ]);
     $result = curl_exec($curl);
     curl_close($curl);
