@@ -35,13 +35,13 @@ class App
      */
     public function sendToDoList(array $tasks, string $chatId):void
     {
-        $formatedTasks = array_reduce($tasks, function (string $acc, TaskDTO $task) {
+        $formattedTasks = array_reduce($tasks, function (string $acc, TaskDTO $task) {
             $acc .= $task->getText() . static::STATUS_MAP[$task->getStatus()] . "\n";
             return $acc;
-        });
+        }, '');
         $this->transport->sendAnswer('sendMessage', [
             'chat_id' => $chatId,
-            'text' => $formatedTasks
+            'text' => $formattedTasks
         ]);
     }
 }
