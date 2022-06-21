@@ -21,7 +21,7 @@ class App
 
         $tasks = array_map(function ($item) {
             return new TaskDTO($item['description'], $item['status']);
-        },$tasksArr['tasks']);
+        },$tasksArr);
         $this->sendToDoList($tasks, $chatId);
     }
     /**
