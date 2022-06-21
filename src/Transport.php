@@ -35,6 +35,6 @@ class Transport
         ]);
         $result = curl_exec($curl);
         curl_close($curl);
-        return json_decode($result, 1) ?? new TaskDTO('noDoTo', "✅");
+        return json_decode($result, 1) ?? new TaskDTO('noDoTo', "done");
     }
 }
