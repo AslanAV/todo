@@ -14,5 +14,7 @@
             "email": "autlevaslan@yandex.ru"
         }
     ],
-    "require": {}
+    "require": {
+        "ext-curl": "*"
+    }
 }
