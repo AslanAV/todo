@@ -1,6 +1,6 @@
 {
     "name": "aslan/todo",
-    "description": "бот на телеграм с Laravel и Heroku / telegram bot with laravel and heroku",
+    "description": "Телеграм бот на PHP",
     "type": "project",
     "license": "MIT",
     "autoload": {
